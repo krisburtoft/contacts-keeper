@@ -8,25 +8,26 @@
     <title>Contact Keeper</title>
     <meta name="description" content="just another react + webpack boilerplate">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
   </head>
   	<body>
+
   	<div id="root"></div>
   		<header>
   			<div id="header">
   				<h1>Contact Keeper</h1>
   			</div>	
-  			<div>
-	  			<form>
-				    <input id="search" type="search" placeholder="Search" />
-				    <button id="serbut">Mag</button>
-				    <button id="add">Contacts Keeper</button>
-				</form>
-			</div>
-  		</header>
+  				
+	  		<form>
+				<input class="search" type="search" placeholder="Search" />
+				<button id="serbut">Mag</button>
+				<button type="button" id="add">Contacts Keeper</button>
+			</form>
+		</header>
 				<div>
 					<table>
-							<thead>
+							<thead class="contact-fields">
 								<tr>
 									<th>First Name</th>
 									<th>Last Name</th>
@@ -69,9 +70,53 @@
 									<td>Beefy.Hanes@yahoo.com</td>
 									<td>Don't let this guy eat beans</td>
 								</tr>
+								</div>
 							</tbody>
 					</table>
 				</div>
 
-  	</body>
+				<div id="myModal" class="modal">
+				  <div class="modal-content">
+				  	<div class="modal-header">
+      					<span class="close">x</span>
+      					<h2>Contacts Keeper</h2>
+    				</div>
+    				<div class="modal-body">
+					  	<form class="add-contact">
+						  <div style="float:left">
+							  <label for="fname">First Name</label>
+							  <br />
+							  <input type="text" id="fname" name="first name" />
+							  <label for="dob">Date of Birth</label>
+							  <br />
+							  <input type="text" id="dob" name="date of birth" /> 
+							  <label for="email">Email</label>
+							  <br />
+							  <input type="text" id="email" name="email" />
+						  </div>
+
+						  <div style="float:right">
+							  <label for="lname">Last Name</label>
+							  <br />
+							  <input type="text" id="lname" name="last name" />
+							  <label for="pnumber">Phone Number</label>
+							  <br />
+							  <input type="text" id="pnumber" name="phone number" />
+						  </div>
+						  	<div style="float:left">
+						  		<label for="notes">Notes</label>
+								<input type="text" id="notes" name="notes" /> 
+					 	 </form>
+				 	 </div>
+				 	<br />
+				 	<div class="modal-footer">
+				 		<button style="float:right" class="save">Save</button>
+     				</div>
+				 	
+				</div>
+					
+			<script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>  	
+			<script type="text/javascript" src="site.js"></script>
+		</body>
 </html>
+
