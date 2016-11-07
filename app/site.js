@@ -1,28 +1,59 @@
-// Get the modal
 var modal = $('#myModal');
-
-// Get the button that opens the modal
 
 var btn = $('#add');
 
-// Get the <span> element that closes the modal
 var span = $('.close').first();
 
-// When the user clicks on the button, open the modal 
+var save = $('#save')
+
+var reset = $('#reset')
+
+var search = $('input[name="first-name"]').val()
+
+var tr = $('tr')
+
+var contacts = localStorage.set('contacts', JSON.stringify(contacts))
+
 btn.on('click',function() {
     modal.show();
+    $("input[type=text]").val("");
 })
 
-// When the user clicks on <span> (x), close the modal
 span.on('click',function() {
     modal.fadeOut()
 })
 
-// When the user clicks anywhere outside of the modal, close it
 $(window).on('click',function(event) {
-	debugger
+	
     if (event.target.id == 'myModal') {
         modal.fadeOut();
     }
 })
+
+save.click(function() {
+	var fname = $('input[name="first-name"]').val()
+
+	var lname = $('input[name="last-name"]').val()
+
+	var dob = $('input[name="date-of-birth"]').val()
+
+	var pnumber = $('input[name="phone-number"]').val()
+
+	var email = $('input[name="email"]').val()
+
+	var notes = $('input[name="notes"]').val()
+
+	$('table').append('<tr><td>' + fname + '</td>' + 
+		'<td>' + lname + '</td>' + 
+		'<td>' + dob + '</td>' + 
+		'<td>' + pnumber + '</td>' +
+		'<td>' + email + '</td>' +
+		'<td>' + notes + '</td></tr>');
+	modal.fadeOut();
+	$("input[type=text]").val("");
+})
+
+reset.bind("click", function() {
+  $("input[type=text]").val("");
+});
 

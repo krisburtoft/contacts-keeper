@@ -12,7 +12,6 @@
 
   </head>
   	<body>
-
   	<div id="root"></div>
   		<header>
   			<div id="header">
@@ -20,7 +19,7 @@
   			</div>	
   				
 	  		<form>
-				<input class="search" type="search" placeholder="Search" />
+				<input class="search" type="search" name="search" placeholder="Search" />
 				<button id="serbut">Mag</button>
 				<button type="button" id="add">Contacts Keeper</button>
 			</form>
@@ -38,39 +37,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Daniel</td>
-									<td>Flanders</td>
-									<td>June-11-1991</td>
-									<td>8312750844</td>
-									<td>thedanflan@gmail.com</td>
-									<td>Dude really likes Donuts</td>
-								</tr>
-								<tr>
-									<td>Daryn</td>
-									<td>Flanders</td>
-									<td>September-14-1968</td>
-									<td>2056170511</td> 
-									<td>daryn.flanders@gmail.com</td>
-									<td>Enjoys strange smelling hair products</td>
-								</tr>
-								<tr>
-									<td>Page</td>
-									<td>Flanders</td>
-									<td>January-08-1990</td>
-									<td>2054700150</td>
-									<td>page.waters@yahoo.com</td>
-									<td>Is addicted to shopping at target</td>
-								</tr>
-								<tr>
-									<td>Beef</td>
-									<td>McCakes</td>
-									<td>June-21-1967</td>
-									<td>7777777777</td>
-									<td>Beefy.Hanes@yahoo.com</td>
-									<td>Don't let this guy eat beans</td>
-								</tr>
-								</div>
 							</tbody>
 					</table>
 				</div>
@@ -83,34 +49,39 @@
     				</div>
     				<div class="modal-body">
 					  	<form class="add-contact">
-						  <div style="float:left">
+							  <div class="fname">
 							  <label for="fname">First Name</label>
-							  <br />
-							  <input type="text" id="fname" name="first name" />
-							  <label for="dob">Date of Birth</label>
-							  <br />
-							  <input type="text" id="dob" name="date of birth" /> 
-							  <label for="email">Email</label>
-							  <br />
-							  <input type="text" id="email" name="email" />
-						  </div>
-
-						  <div style="float:right">
+							  <input type="text" name="first-name" />
+							</div>
+						
+							 <div class="lname">
 							  <label for="lname">Last Name</label>
-							  <br />
-							  <input type="text" id="lname" name="last name" />
+							  <input type="text" name="last-name" />
+							</div>
+							
+							<div class="dob">
+							  <label for="dob">Date of Birth</label>
+							  <input type="text" name="date-of-birth" /> 
+							</div>
+							<div class="pnumber">
 							  <label for="pnumber">Phone Number</label>
-							  <br />
-							  <input type="text" id="pnumber" name="phone number" />
-						  </div>
-						  	<div style="float:left">
-						  		<label for="notes">Notes</label>
-								<input type="text" id="notes" name="notes" /> 
-					 	 </form>
+							  <input type="text" name="phone-number" />
+							</div>
+							
+							<div class="email">
+							  <label for="email">Email</label>
+							  <input type="text" name="email" />
+							</div>
+							<div class="add-note">  
+						  	  <label for="add-note">Notes</label>
+							  <input type="text" name="notes" /> 	
+							</div>  
+						 </form>	   
 				 	 </div>
-				 	<br />
+				 	
 				 	<div class="modal-footer">
-				 		<button style="float:right" class="save">Save</button>
+						<button id="reset" class="reset">Reset</button>				 	
+				 		<button id="save" class="save">Save</button>
      				</div>
 				 	
 				</div>
