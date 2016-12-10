@@ -21,12 +21,14 @@
 	  		<form>
 				<input class="search" type="search" name="search" placeholder="Search" />
 				<button id="serbut">Mag</button>
+				
+				<button id="sort">Sort</button>
 				<button type="button" id="add">Contacts Keeper</button>
 			</form>
 		</header>
 				<div>
-					<table>
-							<thead class="contact-fields">
+					<table id = "contactTable">
+							<thead class = "contact-fields">
 								<tr>
 									<th>First Name</th>
 									<th>Last Name</th>
@@ -36,7 +38,6 @@
 									<th>Notes</th>
 								</tr>
 							</thead>
-							
 					</table>
 				</div>
 
@@ -81,6 +82,7 @@
 				 	<div class="modal-footer">
 						<button id="reset" class="reset">Reset</button>				 	
 				 		<button id="save" class="save">Save</button>
+				 		<button id="update" class="save">Update</button>
      				</div>
 				 	
 				</div>
