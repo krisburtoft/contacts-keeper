@@ -9,7 +9,6 @@
     <meta name="description" content="just another react + webpack boilerplate">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-
   </head>
   	<body>
   	<div id="root"></div>
@@ -18,13 +17,26 @@
   				<h1>Contact Keeper</h1>
   			</div>	
   				
-	  		<form>
+  			<div class="mySort" id="mySort">
+				<div class="sortDropDown" id="sortDropDown">
+					<button id="A_Z">A-Z</button>
+					<button id="Z_A">Z-A</button>
+					<button id="one_9">Phone Number</button>
+					<button id="nine_1">Phone Number</button>
+					<button id="emailA">Email</button>
+					<button id="emailZ">Email</button>
+					<button id="dobA">Date of Birth</button>
+					<button id="dobZ">Date of Birth</button>
+				</div>	
+			</div>
+
+	  		<div>
 				<input class="search" type="search" name="search" placeholder="Search" />
 				<button id="serbut">Mag</button>
-				
-				<button id="sort">Sort</button>
+				<button id="sortBy">Sort By</button>
 				<button type="button" id="add">Contacts Keeper</button>
-			</form>
+			</div>
+
 		</header>
 				<div>
 					<table id = "contactTable">
@@ -36,6 +48,7 @@
 									<th>Phone</th>
 									<th>Email</th>
 									<th>Notes</th>
+									<th>options</th>
 								</tr>
 							</thead>
 					</table>
