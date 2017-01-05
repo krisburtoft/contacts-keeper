@@ -10,26 +10,26 @@
 body {
   width: 100%;
   padding: 0;
-  background-position: center center;
-  background-size: cover;
   height: 600px;
   width: 100%;
   display: inline-block;
-  min-width: 1750px;
-  max-width: 1950px;
   position: static;
+}
+
+.jumbotron {
+  padding: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 #header {
   background: #F68026;
   padding-top: 61px;
   padding-bottom: 30px;
+ /* margin: auto;*/
   color: white;
   font-family: "Proza Libre", sans-serif;
   font-size: 15px;
-  border-bottom: 25px solid #ced8e8;
-  min-width: 1750px;
-  max-width: 1950px;
+  width: 100%;
 }
 #header h1 {
   height: 35px;
@@ -45,23 +45,10 @@ body {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-left: 65px;
-  margin-top: 50px;
   
-}
-#serbut {
-  border: .1px solid #2573BA;
-  border-radius: 0px 3px 3px 0px;
-  background: white;
-  color: rgba(0, 0, 0, 0.0);
-  display: inline-block;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-image: url(http://i.imgur.com/DEy1DW9.png);
-  background-size: 115%;
-  background-position: center;
-  margin-top: 50px;
-  margin-left: -7px;
+  position: fixed;
+  float: left;
+  
 }
 #add {
   border: .1px solid #2573BA;
@@ -72,19 +59,21 @@ body {
   padding-right: 75px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-left: 850px;
+  float: right;
+  margin-right: 7%;
   background-image: url(http://i.imgur.com/15KDcpS.png);
   background-size: 100%;
-  margin-bottom: 30px;
-  position: static;
+
 }
-table {
-  margin-left: 65px;
-  background: #ced8e8;
-  display: inline-block;
+.navigation {
   border-radius: 3px;
   position: static;
-  table-layout: fixed;
+  display: inline-block;
+  width: 100%;
+  height: .01%;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin right: 50px;
 }
 
 .contact-fields th {
@@ -92,11 +81,23 @@ table {
   color: #FFF;
   font-family: 'Arial', sans-serif;
   text-align: left;
-  padding: 10px 138.75px 10px 10px;
+  padding: 10px 120px 10px 10px;
+  margin-left: 0px;
+  margin-right: 10px;
   border: 1px solid #ced8e8;
   position: static;
   table-layout: fixed;
 
+}
+
+.col-lg-11 {
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.col-lg-12 {
+  margin-left: 65px;
+  margin-right: 65px;
 }
 
 table td {
@@ -108,12 +109,8 @@ table td {
   border: .1px solid #ced8e8;
   position: static;
   text-overflow: wrap;
+
   }
-.static, th {
-  padding-right: 25px; 
-  padding-left: 25px; 
-  justify-content: center;
-}
 
 .modal {
     display: none;  /*Hidden by default */ 
@@ -214,21 +211,21 @@ table td {
   display: inline-block;
   width:200px;
 }
-.add-contact label{
+label {
   font-family: "Arial", sans-serif;
-  margin: 10px 0px 0px 25px; 
   display:block;
-  width:200px;
+  width: 100%;
+  
 }
 .modal-footer {
   color: #FFFFFF;
   background: #FFFFFF;
   border-top: 2px solid #ced8e8; 
-  padding:10px;
-  margin-top: -20px;
-  margin-bottom: 1px;
+  padding: 10px !important;
+  height: 20px !important;
+  margin-bottom: 0px !important;
   border-radius: 0px 0px 5px 5px;
-  height: 75px;
+  
 }
 .reset {
   background-color: #676767;
@@ -239,7 +236,7 @@ table td {
   margin: 8px 0px 6px 17px;
   float:left;
   }
-.save {
+#save {
   background-color: #2573BA;
   color: #FFFFFF;
   border: 1px solid #676767;
@@ -250,54 +247,40 @@ table td {
 }
 .add-note input {
   font-family: "Arial", sans-serif;
-  margin: 0px 25px 25px 25px;
-  padding: 0px 10px 10px 10px;
   border-radius: 3px;
   display: inline-block;
-  width: 650px;
-  height: 75px;
   text-overflow: wrap;
+
+  margin-bottom: 50px !important;
+}
+
+col-md-6 {
+  display: inline-block;
 }
 .fname {
   float:left;
+  margin-top: 5px;
 }
 .dob {
   float:left;
+  margin-top: 5px;
 }
 .email {
   float:left;
+  margin-top: 5px;
 }
 .notes {
   float:left;
+  margin-top: 5px;
 }
 .pnumber {
   float:right;
+  margin-top: 5px;
+  margin-left: 1px;
 }
 .lname {
   float:right;
-}
-
-.edit {
-  width: 50px;
-  height: 38px;
-  margin-left: 25px;
-  background-color: #2573BA;
-  border-color: #2573BA;
-  color: #FFFFFF;
-  border-radius: 3px;
-  font-family: "Arial", sans-serif;
-}
-
-.editBravo {
-  width: 50px;
-  height: 38px;
-  margin-left: 25px;
-  background-color: #F68026;
-  border-color: #F68026;
-  color: #FFFFFF;
-  border-radius: 3px;
-  font-family: "Arial", sans-serif;
-
+  margin-top: 5px;
 }
 
 #sortBy {
@@ -309,9 +292,11 @@ table td {
   color: #FFFFFF;
   border-radius: 3px;
   font-family: "Arial", sans-serif;
+  margin-top: 2px;
+  display: none;
 }
 .mySort {
-    display: none;  /*Hidden by default */ 
+    display: none;  
     position: fixed; /* Stay in place */
     z-index: 3; /* Sit on top */
     top: 0;
@@ -415,19 +400,22 @@ table td {
 #edit {
   height: 25px;
   width: 85px;
-  margin: -2px 0px -2px 2px;
+  margin: 2px auto;
   background-color: #2573BA;
   color: #FFFFFF;
   border: 1px solid #676767; 
   border-radius: 3px;
+  display: inline-block;
 }
 
 #delete {
   height: 25px;
   width: 85px;
-  margin: -2px 0px -2px 20px;
+  margin: 2px auto;
   background-color: #2573BA;
   color: #FFFFFF;
   border: 1px solid #676767;
   border-radius: 3px;
+  display: inline-block;
+  float: right;
 }

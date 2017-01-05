@@ -69,7 +69,7 @@ save.on('click', function(){
 	renderContactRow(newContact);
 });   
 
-function createNew() {
+function createNew(contact) {
 	var newContact = {
     	 fname: fname.val(),
       	 lname: lname.val(),
@@ -78,8 +78,13 @@ function createNew() {
       	 email: email.val(),
       	 notes: notes.val(),
       	 TS: time()
-      	}
-    return newContact;
+      	};
+    if ($("input") === "") {
+    alert("Please enter contact information");
+    return false;
+    } else {  	
+    	return newContact;
+	}
 };
 
 function saveContact() {
@@ -141,32 +146,37 @@ function createUpdateHandler(contact) {
 	}
 }
 
-del.on('click', function createRemainderArray(contact) {
-	function singleOutContact() {
-		var contacts = getContacts();
-		var oldContacts = contacts.filter(function (oldContact) {
-		return oldContact.TS != contact.TS;
-		console.log(oldContacts);
-		});
-	}
-});
+function createRemainderArray(contact) {
+    return function singleOutContact() {
+        var contacts = getContacts();
+        var oldContacts = contacts.filter(function (oldContact) {
+            return oldContact.TS != contact.TS;
+        });
+        console.log(oldContacts);
+    }
+}
 
 function getContactArray() {
 	return getContacts();
 }
 
 function renderContactRow(contact) {
-	var tr = $('<tr data-id="'+ contact.TS +'"><td>' + contact.fname + '</td>' + 
+	var editButton = $('<button id="edit" data-id="'+ contact.TS +'">' + "edit" + '</button>');
+    var delButton = $('<button id="delete" data-id="'+ contact.TS +'">' + "delete" + '</button>');
+    var tr = $('<tr data-id="'+ contact.TS +'"><td>' + contact.fname + '</td>' + 
 		'<td>' + contact.lname + '</td>' + 
 		'<td>' + contact.dob + '</td>' + 
 		'<td>' + contact.pnumber + '</td>' +
 		'<td>' + contact.email + '</td>' +
 		'<td>' + contact.notes + '</td>' + '<td>' + 
-		'<button id="edit" data-id="'+ contact.TS +'">' + "edit" + '</button>' +
-		'<button id="delete" data-id="'+ contact.TS +'">' + "delete" + '</button>' + '</td></tr>' );
-		$('table').append(tr);
-		tr.dblclick(createEditHandler(contact));
+		'</td></tr>' );
+    tr.find('td').last().append(editButton).append(delButton);
+    delButton.on('click', createRemainderArray(contact));
+    editButton.on('click', createEditHandler(contact));
+	$('table').append(tr);
 }
+
+
 
 sortBy.on('click', function showSort() {
 	mySort.fadeIn();

@@ -5,14 +5,17 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="App.css">
-    <title>Contact Keeper</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Contacts Keeper</title>
     <meta name="description" content="just another react + webpack boilerplate">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
   </head>
   	<body>
   	<div id="root"></div>
-  		<header>
+  		<header class="jumbotron">
   			<div id="header">
   				<h1>Contact Keeper</h1>
   			</div>	
@@ -30,75 +33,90 @@
 				</div>	
 			</div>
 
-	  		<div>
-				<input class="search" type="search" name="search" placeholder="Search" />
-				<button id="serbut">Mag</button>
-				<button id="sortBy">Sort By</button>
-				<button type="button" id="add">Contacts Keeper</button>
+	  		<div class="navigation">
+	  		<div class="container-fluid">
+					<input class="search" type="search" name="search" placeholder="Search" />
+					<button id="sortBy">Sort By</button>
+					<button type="button" class="btn btn-info btn-lg" id="add" data-toggle="modal" data-target="#myModal">Contacts Keeper</button>
+				</div>
 			</div>
 
 		</header>
-				<div>
-					<table id = "contactTable">
-							<thead class = "contact-fields">
-								<tr>
-									<th>First Name</th>
-									<th>Last Name</th>
-									<th>Date of Birth</th>
-									<th>Phone</th>
-									<th>Email</th>
-									<th>Notes</th>
-									<th>options</th>
-								</tr>
-							</thead>
-					</table>
+				<table class = "col-lg-11">
+						<thead class = "contact-fields">
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Date of Birth</th>
+								<th>Phone</th>
+								<th>Email</th>
+								<th>Notes</th>
+								<th>options</th>
+							</tr>
+						</thead>
 				</div>
+<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
 
-				<div id="myModal" class="modal">
-				  <div class="modal-content">
-				  	<div class="modal-header">
-      					<span class="close">x</span>
-      					<h2>Contacts Keeper</h2>
-    				</div>
-    				<div class="modal-body">
-					  	<form class="add-contact">
-							  <div class="fname">
-							  <label for="fname">First Name</label>
-							  <input type="text" id="fname" name="first-name" />
-							</div>
-						
-							 <div class="lname">
-							  <label for="lname">Last Name</label>
-							  <input type="text" id="lname" name="last-name" />
-							</div>
-							
-							<div class="dob">
-							  <label for="dob">Date of Birth</label>
-							  <input type="text" id="dob" name="date-of-birth" /> 
-							</div>
-							<div class="pnumber">
-							  <label for="pnumber">Phone Number</label>
-							  <input type="text" id="pnumber" name="phone-number" />
-							</div>
-							
-							<div class="email">
-							  <label for="email">Email</label>
-							  <input type="text" id="email" name="email" />
-							</div>
-							<div class="add-note">  
-						  	  <label for="add-note">Notes</label>
-							  <input type="text" id="notes" name="notes" /> 	
-							</div>  
-						 </form>	   
-				 	 </div>
-				 	
-				 	<div class="modal-footer">
-						<button id="reset" class="reset">Reset</button>				 	
-				 		<button id="save" class="save">Save</button>
-				 		<button id="update" class="save">Update</button>
-     				</div>
-				 	
-				</div>
+				    <!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        
+				        <h4 class="modal-title">Add New Contact</h4>
+				      </div>
+				   
+				      <div class="modal-body">
+			            <div class="container-fluid">
+			                <div class="row">
+			                    <div class="col-md-6">
+			                        <div class="fname">
+									  <label for="fname">First Name</label>
+									  <input type="text" class="input-sm" id="fname" name="first-name" />
+									</div>
+			                    </div>
+			                    <div class="col-md-6">
+			                        <div class="lname">
+									  <label for="lname">Last Name</label>
+									  <input type="text" class="input-sm" id="lname" name="last-name" />
+									</div>
+			                    </div>
+			                    <div class="col-md-6">
+			                        <div class="dob">
+									  <label for="dob">Date of Birth</label>
+									  <input type="text" class="input-sm" id="dob" name="date-of-birth" /> 
+									</div>
+			                    </div>
+			                    <div class="col-md-6">
+			                        <div class="pnumber">
+									  <label for="pnumber">Phone Number</label>
+									  <input type="text" class="input-sm" id="pnumber" name="phone-number" />
+									</div>
+			                    </div>
+			                    <div class="col-md-12">
+			                        <div class="email">
+									  <label for="email">Email</label>
+									  <input type="text" class="input-sm" id="email" name="email" />
+									</div>
+			                    </div>
+			                    <div class="col-md-6">
+			                        <div class="add-note">  
+								  	  <label for="add-note">Notes</label>
+									  <input type="text" class="input-lg" id="notes" name="notes" /> 	
+									</div>  
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+				      <div class="modal-footer">
+				        <button type="submit" id="save" class="btn btn-default btn-default pull-right" data-dismiss="modal">Save<span class="glyphicon glyphicon">
+				        <button type="submit" id="update" class="btn btn-default btn-default pull-right" data-dismiss="modal"><span class="glyphicon glyphicon">
+				      </div>
+				    </div>
+
+				  </div>
+				</div>			
+
 					
 			<script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>  	
 			<script type="text/javascript" src="site.js"></script>
