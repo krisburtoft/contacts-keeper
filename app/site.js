@@ -79,24 +79,14 @@ function createNew(contact) {
       	 notes: notes.val(),
       	 TS: time()
       	};
-    if ($("input") === "") {
-    alert("Please enter contact information");
-    return false;
-    } else {  	
-    	return newContact;
-	}
+    return newContact;
 };
 
 function saveContact() {
-	
 	var newContact = createNew()
-
 	var oldContacts = JSON.parse(localStorage.getItem('createNew')) || [];
-	
 	oldContacts.push(newContact);
-
-	saveAllContacts(oldContacts)
-
+	saveAllContacts(oldContacts);
 	return newContact;
 }
 
@@ -111,7 +101,7 @@ function getContacts() {
 
 function createEditHandler(contact) {
 	return function editHandler() {
-		modal.show();
+		modal.show() ;
 		mySort.hide();
 		fname.val(contact.fname)
 		lname.val(contact.lname)
@@ -132,6 +122,7 @@ function createUpdateHandler(contact) {
 		var oldContacts = contacts.filter(function (oldContact) {
 		return oldContact.TS === contact.TS;
 		});
+
 		var oldContact = oldContacts[0];
 		var contactIndex = contacts.indexOf(oldContact);
 		var updatedContact = createNew();
@@ -146,15 +137,28 @@ function createUpdateHandler(contact) {
 	}
 }
 
-function createRemainderArray(contact) {
+function deleteContactFromArray(contact) {
     return function singleOutContact() {
         var contacts = getContacts();
         var oldContacts = contacts.filter(function (oldContact) {
-            return oldContact.TS != contact.TS;
+        return oldContact.TS != contact.TS;
         });
+       localStorage.setItem('createNew', JSON.stringify(oldContacts));
+       $('tbody tr').remove();
+		renderContactRows();
         console.log(oldContacts);
-    }
+    };
 }
+
+// function createRecycleArray(contact) {
+// 	return function excludedContact() {
+// 	var contacts = getContacts();
+// 	var oldContact1 = contacts.filter(function (oldContact) {
+// 		return oldContact.TS = contact.TS;
+// 	});
+// 	console.log(oldContact1);	
+// 	}
+// }
 
 function getContactArray() {
 	return getContacts();
@@ -171,7 +175,7 @@ function renderContactRow(contact) {
 		'<td>' + contact.notes + '</td>' + '<td>' + 
 		'</td></tr>' );
     tr.find('td').last().append(editButton).append(delButton);
-    delButton.on('click', createRemainderArray(contact));
+    delButton.on('click', deleteContactFromArray(contact));
     editButton.on('click', createEditHandler(contact));
 	$('table').append(tr);
 }
