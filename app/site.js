@@ -20,6 +20,24 @@ var email = $('input[name="email"]');
 
 var notes = $('input[name="notes"]');
 
+var fNameTh = $('#fNameTh');
+
+var fNameThUp = $('#fNameThUp');
+
+var fNameThDown = $('#fNameThDown');
+
+var lNameTh = $('#lNameTh');
+
+var lNameThUp = $('#lNameThUp');
+
+var lNameThDown = $('#lNameThDown');
+
+var pNumberTh = $('#pNumberTh');
+
+var pNumberThUp = $('#pNumberThUp');
+
+var pNumberThDown = $('#pNumberThDown');
+
 var search = $('input[name="search"]');
 
 var update =$('#update');
@@ -31,8 +49,6 @@ var del = $('#delete');
 var mySort = $('#mySort');
 
 var sortDropDown =$('#sortDropDown')
-
-var sortBy = $('#sortBy');
 
 var A_Z = $('#A_Z')
 
@@ -101,8 +117,9 @@ function getContacts() {
 
 function createEditHandler(contact) {
 	return function editHandler() {
-		modal.show() ;
-		mySort.hide();
+		jQuery.noConflict();
+		$('#myModal').modal('show');
+		$('#mySort').modal('hide');
 		fname.val(contact.fname)
 		lname.val(contact.lname)
 		dob.val(contact.dob)
@@ -180,43 +197,76 @@ function renderContactRow(contact) {
 	$('table').append(tr);
 }
 
-
-
-sortBy.on('click', function showSort() {
-	mySort.fadeIn();
-	sortDropDown.show();
-})
-
-A_Z.on('click', function sortArray(event) {
+fNameTh.on('click', function sortArray(event) {
 	event.preventDefault();
 	$('tbody tr').remove();
 	sortFname().forEach(renderContactRow);
-	A_Z.hide();
-	Z_A.show();	
+	fNameTh.hide();
+	fNameThUp.show();
 })
 
-Z_A.on('click', function sortArray(event) {
+fNameThUp.on('click', function sortArray(event) {
 	event.preventDefault();
 	$('tbody tr').remove();
 	sortFnameRev().forEach(renderContactRow);
-	Z_A.hide();
-	A_Z.show();	
+	fNameThUp.hide();
+	fNameThDown.show()
 })
 
-one_9.on('click', function sortArray(event) {
+fNameThDown.on('click', function sortArray(event) {
+	event.preventDefault();
+	$('tbody tr').remove();
+	renderContactRows();
+	fNameThDown.hide();
+	fNameTh.show()
+})
+
+lNameTh.on('click', function sortArray(event) {
+	event.preventDefault();
+	$('tbody tr').remove();
+	sortLnameRev().forEach(renderContactRow);
+	lNameTh.hide();
+	lNameThUp.show();
+})
+
+lNameThUp.on('click', function sortArray(event) {
+	event.preventDefault();
+	$('tbody tr').remove();
+	sortLnameRev().forEach(renderContactRow);
+	lNameThUp.hide();
+	lNameThDown.show();
+})
+
+lNameThDown.on('click', function sortArray(event) {
+	event.preventDefault();
+	$('tbody tr').remove();
+	renderContactRows();
+	lNameThDown.hide();
+	lNameTh.show();
+})
+
+pNumberTh.on('click', function sortArray(event) {
 	event.preventDefault();
 	$('tbody tr').remove();
 	sortPnumber().forEach(renderContactRow);
-	one_9.hide();
-	nine_1.show();	
+	pNumberTh.hide();
+	pNumberThUp.show();
 })
 
-nine_1.on('click', function sortArray(event) {
+pNumberThUp.on('click', function sortArray(event) {
 	event.preventDefault();
 	$('tbody tr').remove();
 	sortPnumberRev().forEach(renderContactRow);
-	nine_1.hide();
-	one_9.show();	
+	pNumberThUp.hide();
+	pNumberThDown.show();
+})
+
+pNumberThDown.on('click', function sortArray(event) {
+	event.preventDefault();
+	$('tbody tr').remove();
+	renderContactRows();
+	pNumberThDown.hide();
+	pNumberTh.show();
 })
 
 function sortFname() {

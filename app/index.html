@@ -7,7 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="App.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <title>Contacts Keeper</title>
     <meta name="description" content="just another react + webpack boilerplate">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,26 +18,13 @@
   	<div id="root"></div>
   		<header class="jumbotron">
   			<div id="header">
-  				<h1>Contact Keeper</h1>
+  				<h1>Keeper of the Contacts</h1>
   			</div>	
   				
-  			<div class="mySort" id="mySort">
-				<div class="sortDropDown" id="sortDropDown">
-					<button id="A_Z">A-Z</button>
-					<button id="Z_A">Z-A</button>
-					<button id="one_9">Phone Number</button>
-					<button id="nine_1">Phone Number</button>
-					<button id="emailA">Email</button>
-					<button id="emailZ">Email</button>
-					<button id="dobA">Date of Birth</button>
-					<button id="dobZ">Date of Birth</button>
-				</div>	
-			</div>
 
 	  		<div class="navigation">
 	  		<div class="container-fluid">
 					<input class="search" type="search" name="search" placeholder="Search" />
-					<button id="sortBy">Sort By</button>
 					<button type="button" class="btn btn-info btn-lg" id="add" data-toggle="modal" data-target="#myModal">Contacts Keeper</button>
 				</div>
 			</div>
@@ -45,10 +33,10 @@
 				<table class = "col-lg-11">
 						<thead class = "contact-fields">
 							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
+								<th></span><span>First Name</span><button  id="fNameTh" class="glyphicon glyphicon-sort" ></button><button  id="fNameThUp" class="glyphicon glyphicon-menu-up" ></button><button  id="fNameThDown" class="glyphicon glyphicon-menu-down" ></button></th>
+								<th></span><span>Last Name</span><button  id="lNameTh" class="glyphicon glyphicon-sort" ></button><button  id="lNameThUp" class="glyphicon glyphicon-menu-up" ></button><button  id="lNameThDown" class="glyphicon glyphicon-menu-down" ></button></th>
 								<th>Date of Birth</th>
-								<th>Phone</th>
+								<th></span><span>Phone Number</span><button  id="pNumberTh" class="glyphicon glyphicon-sort" ></button><button  id="pNumberThUp" class="glyphicon glyphicon-menu-up" ></button><button  id="pNumberThDown" class="glyphicon glyphicon-menu-down" ></button></th>
 								<th>Email</th>
 								<th>Notes</th>
 								<th>options</th>
@@ -110,14 +98,11 @@
 			        </div>
 				      <div class="modal-footer">
 				        <button type="submit" id="save" class="btn btn-default btn-default pull-right" data-dismiss="modal">Save<span class="glyphicon glyphicon">
-				        <button type="submit" id="update" class="btn btn-default btn-default pull-right" data-dismiss="modal"><span class="glyphicon glyphicon">
+				        <button type="submit" id="update" class="btn btn-default btn-default pull-right" data-dismiss="modal">Update<span class="glyphicon glyphicon">
 				      </div>
 				    </div>
-
 				  </div>
 				</div>			
-
-					
 			<script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>  	
 			<script type="text/javascript" src="site.js"></script>
 		</body>
