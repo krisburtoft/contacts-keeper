@@ -63,7 +63,6 @@
     "rimraf": "^2.4.3",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
-    "stats-webpack-plugin": "^0.2.1",
-    
+    "stats-webpack-plugin": "^0.2.1"
   }
 }
