@@ -1,3 +1,5 @@
+import './app.css'
+
 var modal = $('#myModal');
 
 var btn = $('#add');
